@@ -12,14 +12,10 @@ header {
     padding: 10px 20px;
 }
 
-.logo {
-    font-size: 1.8em;
-}
-
-nav ul {
-    list-style: none;
-    display: flex;
-    gap: 20px;
+.logo img {
+  width: 60px;        /* ukuran logo */
+  height: auto;
+  border-radius: 8px; /* sudut */
 }
 
 nav a {
@@ -27,10 +23,61 @@ nav a {
     color: #333;
 }
 
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+nav li {
+  border: 1px solid #aaa;
+  border-radius: 4px;
+  padding: 6px 12px;
+}
+
+.about, .profile, .contact {
+  width: 90%;
+  max-width: 1000px;
+  margin: 30px auto;
+  padding: 30px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 0 8px rgba(0,0,0,0.05);
+}
+
+.about h2, .profile h2, .contact h2 {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.about p {
+  text-align: center;
+  line-height: 1.6;
+}
+
+
 .hero {
-    text-align: center;
-    padding: 50px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    height: 700px; /* ukuran hero */
+    padding: 40px 60px;
     background-color: #eaeaea;
+}
+.hero h1 {
+    font-size: 1.6em;
+    margin-bottom: 10px;
+} 
+
+.hero-image {
+  width: 100%;
+  max-width: 1366px;
+  aspect-ratio: 1366 / 576;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-top: 20px;
 }
 
 .profile {
@@ -46,11 +93,16 @@ nav a {
 }
 
 .circle {
-    width: 100px;
-    height: 100px;
+    width: 120px;
+    height: 120px;
     border-radius: 50%;
     border: 2px solid #000;
-    margin: auto;
+    margin-bottom: 10px;
+
+    /* Gambar di lingkaran */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 #stakeholder {
@@ -142,7 +194,160 @@ button:hover {
 }
 
 footer {
-    text-align: center;
+    text-align: right;
     padding: 20px;
     background-color: #f4f4f4;
 }
+
+/* ========== RESPONSIVE ========== */
+
+/* Laptop & Tablet landscape */
+@media (max-width: 1024px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  nav ul {
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    gap: 10px;
+  }
+
+  .hero {
+    padding: 20px;
+    height: auto;
+  }
+
+  .hero h1 {
+    font-size: 1.4em;
+  }
+
+  .hero-image {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .locations {
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  .message-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  form, #outputBox {
+    width: 90%;
+  }
+}
+
+/* Tablet portrait & HP besar */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    text-align: center;
+     width: 95%;
+    margin: 15px auto;
+    padding: 20px;
+  }
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  nav li {
+    width: 80%;
+    text-align: center;
+  }
+
+  .hero {
+    padding: 20px;
+  }
+
+  .hero h1 {
+    font-size: 1.3em;
+    text-align: center;
+  }
+
+  .hero p {
+    text-align: center;
+  }
+
+  .profile {
+    padding: 20px;
+  }
+
+  .locations {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .contact {
+    padding: 20px;
+  }
+
+  .message-container {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  form, #outputBox {
+    width: 100%;
+  }
+
+  label {
+    width: 100%;
+    margin-bottom: 5px;
+  }
+
+  input[type="text"],
+  input[type="date"],
+  textarea {
+    width: 100%;
+  }
+
+
+/* HP kecil */
+@media (max-width: 480px) {
+  header {
+    padding: 10px;
+  }
+
+  .logo img {
+    width: 45px;
+  }
+
+  .hero {
+    padding: 15px;
+  }
+
+  .hero h1 {
+    font-size: 1.1em;
+  }
+  .hero h2 {
+    font-size: 1.1em;
+  }
+
+  nav li {
+    padding: 5px;
+    font-size: 0.9em;
+  }
+    p {
+    font-size: 0.9em;
+  }
+
+  .circle {
+    width: 80px;
+    height: 80px;
+  }
+}
+  button {
+    width: 100%;
+  }
+
