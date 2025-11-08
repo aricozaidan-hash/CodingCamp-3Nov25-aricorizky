@@ -18,22 +18,126 @@ header {
   border-radius: 8px; /* sudut */
 }
 
-nav a {
-    text-decoration: none;
-    color: #333;
+/* ===== NAVBAR STYLE ===== */
+/* ========== NAVBAR STYLE ========== */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f4f4f4;
+  padding: 10px 30px;
+  position: relative;
+  box-sizing: border-box;
 }
 
+.logo img {
+  width: 60px;
+  height: auto;
+  border-radius: 8px;
+}
+
+/* ===== MENU (desktop default) ===== */
 nav ul {
   list-style: none;
   display: flex;
-  gap: 20px;
+  flex-direction: row;
+  gap: 25px;
+  margin: 0;
+  padding: 0;
+}/* ======== PERBAIKAN LAYOUT MESSAGE US DI DESKTOP ======== */
+@media (min-width: 1025px) {
+  .message-container {
+    display: flex;
+    flex-direction: row; /* sejajar kiri-kanan */
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 40px;
+  }
+
+  form {
+    width: 45%;
+  }
+
+  #outputBox {
+    width: 45%;
+  }
+
+  label {
+    display: inline-block;
+    width: 120px;
+  }
+
+  input[type="text"],
+  input[type="date"],
+  textarea {
+    width: calc(100% - 130px); /* agar sejajar dengan label */
+    display: inline-block;
+  }
 }
+
 
 nav li {
   border: 1px solid #aaa;
   border-radius: 4px;
   padding: 6px 12px;
+  transition: background-color 0.3s;
 }
+
+nav li:hover {
+  background-color: #ddd;
+}
+
+nav a {
+  text-decoration: none;
+  color: #333;
+}
+
+/* ===== HAMBURGER BUTTON ===== */
+.menu-toggle {
+  display: none;
+  font-size: 26px;
+  cursor: pointer;
+  user-select: none;
+}
+
+/* ========== RESPONSIVE (HP & tablet kecil) ========== */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  nav ul {
+    display: none; /* disembunyikan dulu */
+    flex-direction: column;
+    align-items: flex-end;
+    position: absolute;
+    top: 65px;
+    right: 15px;
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    width: 180px;
+    z-index: 999;
+  }
+
+  nav ul.active {
+    display: flex; /* muncul saat hamburger diklik */
+  }
+
+  nav li {
+    width: 100%;
+    text-align: center;
+    margin: 5px 0;
+  }
+
+  /* rapikan posisi header */
+  header {
+    flex-wrap: nowrap;
+  }
+}
+
 
 .about, .profile, .contact {
   width: 90%;

@@ -1,6 +1,13 @@
 document.getElementById("messageForm").addEventListener("submit", function (event) {
   event.preventDefault();
 
+
+  const menuToggle = document.getElementById("menuToggle");
+  const navMenu = document.querySelector("nav ul");
+
+  menuToggle.addEventListener("click", () => {
+    navMenu.classList.toggle("active");
+  });
   // Ambil nilai dari form
   const nama = document.getElementById("nama").value.trim();
   const tanggalLahir = document.getElementById("tanggalLahir").value;
